@@ -7,20 +7,20 @@ import { Registro } from './registro';
 //main se usa solo para instanciar 
 
 //creo motos
-const moto1 = new Moto ("Zanella","Cecato","ABC123");
-const moto2 = new Moto ("Beta","tr200","wdj123");
-const moto3 = new Moto ("Yamaha","xtz150","hij456");
+const moto1 = new Moto (250,"ABJ123","YAMAHA", "XTZ");
+const moto2 = new Moto (200,"AWK456","BETA","TR");
+const moto3 = new Moto (125,"JKL123","HONDA","XR");
 
 
 //creo autos
-const auto1 = new Auto ("Fiat","Strada","ab123cd"); 
-const auto2 = new Auto ("Volkswagen", "Gol","kup441"); 
-const auto3 = new Auto ("Ford", "Ranger","ncj401"); 
+const auto1 = new Auto (5,"KUP441","VOLKSWAGEN","GOL"); 
+const auto2 = new Auto (3,"DJI434","FORD","KA"); 
+const auto3 = new Auto (2,"KPK434","CHEVROLET","S10"); 
 
 //creo camiones
-const camion1 = new Camion ("Mercedes Benz","1720","kpx474"); 
-const camion2 = new Camion ("Iveco","Tector 330","klm222");
-const camion3 = new Camion ("Scania","440","opk123"); 
+const camion1 = new Camion (13000,"ABC123","MERCEDES BENZ","1720"); 
+const camion2 = new Camion (12000,"MJI474","IVECO","TECTOR");
+const camion3 = new Camion (11000,"HGA969","SCANIA","440CV"); 
 
 //creo registro 
 const registro = new Registro ("Registro automotor 403"); 
@@ -44,17 +44,17 @@ registro.agregarCamion(camion3);
 console.log("Motos en el registro: ",registro.obtenerMotos());
 console.log ("--------------------------------");
 
-//quitar moto por patente "ABC123"
-registro.quitarMoto("ABC123"); 
-console.log("Motos en el registro luego de eliminar vehiculo patente ABC123 : ", registro.obtenerMotos());
+//quitar moto por patente "ABJ123"
+registro.quitarMoto("ABJ123"); 
+console.log("Motos en el registro luego de eliminar vehiculo patente ABJ123 : ", registro.obtenerMotos());
 console.log ("--------------------------------");
 
-//modificar moto por patente "wdj123"
-const nuevaMoto = new Moto("Honda", "CB650R", "wdj123");
-registro.modificarMoto("wdj123", nuevaMoto);
+//modificar moto por patente "AWK456"
+const nuevaMoto = new Moto(600,"AWK456","HONDA","CB600");
+registro.modificarMoto("AWK456", nuevaMoto);
 
 //ver lista completa de motos en el registro
-console.log("Motos en el registro luego de modificar vehiculo patente wdj123: ", registro.obtenerMotos()); 
+console.log("Motos en el registro luego de modificar vehiculo patente AWK456: ", registro.obtenerMotos()); 
 console.log ("--------------------------------");
 
 //ver listado completo de autos
@@ -62,8 +62,8 @@ console.log("Listado de autos antes de modificar: ", registro.obtenerAutos());
 console.log ("--------------------------------");
 
 //modificar auto por patente "kup441"
-const nuevoAuto = new Auto( "Fiat", "Toro","kup441");
-registro.modificarAuto("kup441",nuevoAuto); 
+const nuevoAuto = new Auto( 3 ,"kup441","RENAULT","CLIO");
+registro.modificarAuto("KUP441",nuevoAuto); 
 
 //ver listado completo de autos
 console.log("Listado de autos luego de modificar vehiculo patente kup441: ", registro.obtenerAutos()); 

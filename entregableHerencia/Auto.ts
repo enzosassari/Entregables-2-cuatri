@@ -1,22 +1,16 @@
 import { Vehiculo } from "./Vehiculo";
 
 export class Auto extends Vehiculo {   //auto es hijo de vehiculo
+    
+    private cantidadPuertas : number; 
+    
+    constructor( cantPuertas:number, patente:string, marca:string, modelo:string){ 
+        super(patente,marca,modelo);    //agrego el super para heredar 
+        this.cantidadPuertas = cantPuertas;  //atributo distinto de todas las clases
+    }
 
-    private marca:string;
-    private modelo:string;
-
-constructor( marca:string, modelo:string , patente:string){  //pongo patente, heredada de vehiculos
-    super(patente);    //agrego el super para heredar 
-    this.marca = marca;
-    this.modelo = modelo; 
-}
+    getCantPuertas(): number{
+        return this.cantidadPuertas;
+    }
  
-    getMarca(): string{
-        return this.marca; 
-    }
-
-    getModelo():string {
-        return this.modelo;
-    }
-
 }

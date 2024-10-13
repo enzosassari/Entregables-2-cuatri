@@ -19,17 +19,13 @@ exports.Moto = void 0;
 var Vehiculo_1 = require("./Vehiculo");
 var Moto = /** @class */ (function (_super) {
     __extends(Moto, _super);
-    function Moto(marca, modelo, patente) {
-        var _this = _super.call(this, patente) || this;
-        _this.marca = marca;
-        _this.modelo = modelo;
+    function Moto(cilindrada, patente, marca, modelo) {
+        var _this = _super.call(this, patente, marca, modelo) || this;
+        _this.cilindrada = cilindrada;
         return _this;
     }
-    Moto.prototype.getMarca = function () {
-        return this.marca;
-    };
-    Moto.prototype.getModelo = function () {
-        return this.modelo;
+    Moto.prototype.getCilindrada = function () {
+        return this.cilindrada;
     };
     return Moto;
 }(Vehiculo_1.Vehiculo));

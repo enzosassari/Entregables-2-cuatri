@@ -19,17 +19,13 @@ exports.Auto = void 0;
 var Vehiculo_1 = require("./Vehiculo");
 var Auto = /** @class */ (function (_super) {
     __extends(Auto, _super);
-    function Auto(marca, modelo, patente) {
-        var _this = _super.call(this, patente) || this;
-        _this.marca = marca;
-        _this.modelo = modelo;
+    function Auto(cantPuertas, patente, marca, modelo) {
+        var _this = _super.call(this, patente, marca, modelo) || this;
+        _this.cantidadPuertas = cantPuertas;
         return _this;
     }
-    Auto.prototype.getMarca = function () {
-        return this.marca;
-    };
-    Auto.prototype.getModelo = function () {
-        return this.modelo;
+    Auto.prototype.getCantPuertas = function () {
+        return this.cantidadPuertas;
     };
     return Auto;
 }(Vehiculo_1.Vehiculo));

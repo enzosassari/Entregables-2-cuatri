@@ -2,20 +2,14 @@ import { Vehiculo } from "./Vehiculo";
 
 export class Moto extends Vehiculo {  //moto es un hijo de vehiculo
     
-    private marca:string;
-    private modelo:string;
+    private cilindrada: number; 
 
-constructor( marca:string, modelo:string, patente:string){  //pongo patente, heredada de vehiculos
-    super(patente);  //agrego el super para heredar 
-    this.marca = marca;
-    this.modelo = modelo; 
-}
-   
-    getMarca(): string{
-        return this.marca; 
+    constructor( cilindrada: number, patente:string,marca:string, modelo:string,){  
+        super(patente,marca,modelo);  //agrego el super para heredar 
+        this.cilindrada = cilindrada; //atributo distinto de todas las clases
     }
-
-    getModelo():string {
-        return this.modelo;
+    
+    getCilindrada():number{
+        return this.cilindrada; 
     }
 }

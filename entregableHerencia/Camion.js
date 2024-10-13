@@ -19,17 +19,13 @@ exports.Camion = void 0;
 var Vehiculo_1 = require("./Vehiculo");
 var Camion = /** @class */ (function (_super) {
     __extends(Camion, _super);
-    function Camion(marca, modelo, patente) {
-        var _this = _super.call(this, patente) || this;
-        _this.marca = marca;
-        _this.modelo = modelo;
+    function Camion(tara, patente, marca, modelo) {
+        var _this = _super.call(this, patente, marca, modelo) || this;
+        _this.tara = tara;
         return _this;
     }
-    Camion.prototype.getMarca = function () {
-        return this.marca;
-    };
-    Camion.prototype.getModelo = function () {
-        return this.modelo;
+    Camion.prototype.getTara = function () {
+        return this.tara;
     };
     return Camion;
 }(Vehiculo_1.Vehiculo));
