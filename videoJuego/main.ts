@@ -18,9 +18,11 @@ let Maravilla = new LuchadorEvolucion ("Maravilla"); //luchador evolucionado
 let Legolas = new Arquero ("Legolas");  //arquero basico    
 let Enzo = new ArqueroEvolucion ("Enzo"); //arquero evolucionado 
 
-
-Snake.atacar();
-Merlin.defender();
+// --------------------- pruebas --------------------------------------------//  
+Snake.atacar();  //pruebo ataque y veo como ataca y por cuanto ...
+Enzo.defender();
+Merlin.atacar();
+Maravilla.defender();
 Snake.getVida();
 Merlin.getVida();
 Snake.getNivel();

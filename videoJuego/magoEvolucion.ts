@@ -12,6 +12,16 @@ export class MagoEvolucion extends Mago{
 
     //Metodo del poder exclusivo de los magos evolucionados 
 
+    public atacar(): void {
+        return console.log(`${this.nombre} ataca x20`) ;
+    }
+
+    
+    public defender(): void {
+        return console.log(`${this.nombre} defiende x20`) ;
+    }
+
+
     public lanzarHechizoEvolucionado():void{
         return console.log(`${this.nombre} lanza  ${this.hechizoEvolucionado} `) ;
     }

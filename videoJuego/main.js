@@ -15,8 +15,11 @@ var Maravilla = new luchadorEvolucion_1.LuchadorEvolucion("Maravilla"); //luchad
 //Creo arqueros: 
 var Legolas = new arquero_1.Arquero("Legolas"); //arquero basico    
 var Enzo = new arqueroEvolucionado_1.ArqueroEvolucion("Enzo"); //arquero evolucionado 
+//pruebas 
 Snake.atacar();
-Merlin.defender();
+Enzo.defender();
+Merlin.atacar();
+Maravilla.defender();
 Snake.getVida();
 Merlin.getVida();
 Snake.getNivel();

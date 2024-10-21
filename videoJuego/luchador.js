@@ -24,6 +24,12 @@ var Luchador = /** @class */ (function (_super) {
         _this.golpeBasico = "¡ Golpe letal !"; //poder exclusivo de luchador
         return _this;
     }
+    Luchador.prototype.atacar = function () {
+        return console.log("".concat(this.nombre, " ataca x5"));
+    };
+    Luchador.prototype.defender = function () {
+        return console.log("".concat(this.nombre, " defiende x5"));
+    };
     Luchador.prototype.lanzarGolpeBasico = function () {
         return console.log("".concat(this.nombre, " lanza ").concat(this.golpeBasico));
     };

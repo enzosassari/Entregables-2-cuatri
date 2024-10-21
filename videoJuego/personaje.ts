@@ -1,5 +1,5 @@
 
-export class Personaje {
+export abstract class Personaje {
     
     protected nombre: string; //nombre de personaje
     protected nivel: number = 1 ; //nivel de personaje (todos arrancan con 1)
@@ -9,13 +9,9 @@ export class Personaje {
         this.nombre = nombre;
     }
 
-   public atacar(): void{
-     return console.log(`${this.nombre} esta atacando`); 
-   }
+    abstract atacar(): void; //metodo abstracto, no todos atacan igual  
 
-   public defender(): void{
-     return console.log(`${this.nombre} esta defendiendo`); 
-   }
+    abstract defender(): void; //metodo abstracto, no todos defienden igual
 
    public getVida(): void{
      return console.log (`la vida de ${this.nombre} es de ${this.puntosDeVida}`); 

@@ -10,6 +10,15 @@ export class Mago extends Personaje {
 
     //Metodo del poder exclusivo de los magos
 
+    public atacar(): void {
+        return console.log(`${this.nombre} ataca x10`) ;
+    }
+
+    public defender(): void {
+        return console.log(`${this.nombre} defiende x10`) ;
+    }
+
+
     public lanzarHechizoBasico(): void{
         return console.log(`${this.nombre} lanza ${this.hechizoBasico} `) ;
     }

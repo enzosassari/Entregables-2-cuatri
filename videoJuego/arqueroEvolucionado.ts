@@ -9,6 +9,16 @@ export class ArqueroEvolucion extends Arquero{
         this.nivel = 2;  //pasamos de nivel 
     }
 
+    
+    public atacar(): void {
+        return console.log(`${this.nombre} ataca x35`) ;
+    }
+
+    public defender(): void {
+        return console.log(`${this.nombre} defiende x35`) ;
+    }
+
+
     public lanzarFlechaEvolucionada(): void{
         return console.log (`${this.nombre} lanza ${this.flechaEvolucionado}`); 
     }

@@ -25,6 +25,12 @@ var Mago = /** @class */ (function (_super) {
         return _this;
     }
     //Metodo del poder exclusivo de los magos
+    Mago.prototype.atacar = function () {
+        return console.log("".concat(this.nombre, " ataca x10"));
+    };
+    Mago.prototype.defender = function () {
+        return console.log("".concat(this.nombre, " defiende x10"));
+    };
     Mago.prototype.lanzarHechizoBasico = function () {
         return console.log("".concat(this.nombre, " lanza ").concat(this.hechizoBasico, " "));
     };

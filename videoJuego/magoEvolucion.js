@@ -27,6 +27,12 @@ var MagoEvolucion = /** @class */ (function (_super) {
         return _this;
     }
     //Metodo del poder exclusivo de los magos evolucionados 
+    MagoEvolucion.prototype.atacar = function () {
+        return console.log("".concat(this.nombre, " ataca x20"));
+    };
+    MagoEvolucion.prototype.defender = function () {
+        return console.log("".concat(this.nombre, " defiende x20"));
+    };
     MagoEvolucion.prototype.lanzarHechizoEvolucionado = function () {
         return console.log("".concat(this.nombre, " lanza  ").concat(this.hechizoEvolucionado, " "));
     };

@@ -8,6 +8,14 @@ export class Luchador extends Personaje {
         super(nombre);
     }
 
+    public atacar(): void {
+        return console.log(`${this.nombre} ataca x5`) ;
+    }
+
+    public defender(): void {
+        return console.log(`${this.nombre} defiende x5`) ;
+    }
+
     public lanzarGolpeBasico():void{
         return console.log(`${this.nombre} lanza ${this.golpeBasico}`);
     }

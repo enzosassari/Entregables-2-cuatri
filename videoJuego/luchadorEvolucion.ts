@@ -10,6 +10,14 @@ export class LuchadorEvolucion extends Luchador{
         this.nivel = 2;  //pasa a nivel 2 
     }
 
+    public atacar(): void {
+        return console.log(`${this.nombre} ataca x42`) ;
+    }
+
+    public defender(): void {
+        return console.log(`${this.nombre} defiende x42`) ;
+    }
+
     public lanzarGolpeEvolucionado(): void {
         return console.log (`${this.nombre} lanza ${this.golpeEvolucionado}`); 
     }

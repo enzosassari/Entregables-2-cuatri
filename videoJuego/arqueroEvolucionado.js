@@ -21,11 +21,17 @@ var ArqueroEvolucion = /** @class */ (function (_super) {
     __extends(ArqueroEvolucion, _super);
     function ArqueroEvolucion(nombre) {
         var _this = _super.call(this, nombre) || this;
-        _this.flechaEvolucionado = " Golpe con flecha de fuego! ";
-        _this.puntosDeVida = 250;
-        _this.nivel = 2;
+        _this.flechaEvolucionado = " Golpe con flecha de fuego! "; //nuevo ataque exclusivo de la evolucion 
+        _this.puntosDeVida = 250; //evoluciona y le damos 250 de vida
+        _this.nivel = 2; //pasamos de nivel 
         return _this;
     }
+    ArqueroEvolucion.prototype.atacar = function () {
+        return console.log("".concat(this.nombre, " ataca x35"));
+    };
+    ArqueroEvolucion.prototype.defender = function () {
+        return console.log("".concat(this.nombre, " defiende x35"));
+    };
     ArqueroEvolucion.prototype.lanzarFlechaEvolucionada = function () {
         return console.log("".concat(this.nombre, " lanza ").concat(this.flechaEvolucionado));
     };

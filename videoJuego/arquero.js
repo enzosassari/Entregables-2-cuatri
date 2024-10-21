@@ -24,6 +24,12 @@ var Arquero = /** @class */ (function (_super) {
         _this.flechaBasica = " Golpe con flecha! ";
         return _this;
     }
+    Arquero.prototype.atacar = function () {
+        return console.log("".concat(this.nombre, " ataca x15"));
+    };
+    Arquero.prototype.defender = function () {
+        return console.log("".concat(this.nombre, " defiende x15"));
+    };
     Arquero.prototype.lanzarFlechaBasica = function () {
         return console.log("".concat(this.nombre, " lanza ").concat(this.flechaBasica));
     };

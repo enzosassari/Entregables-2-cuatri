@@ -26,6 +26,12 @@ var LuchadorEvolucion = /** @class */ (function (_super) {
         _this.nivel = 2; //pasa a nivel 2 
         return _this;
     }
+    LuchadorEvolucion.prototype.atacar = function () {
+        return console.log("".concat(this.nombre, " ataca x42"));
+    };
+    LuchadorEvolucion.prototype.defender = function () {
+        return console.log("".concat(this.nombre, " defiende x42"));
+    };
     LuchadorEvolucion.prototype.lanzarGolpeEvolucionado = function () {
         return console.log("".concat(this.nombre, " lanza ").concat(this.golpeEvolucionado));
     };
