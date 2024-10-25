@@ -16,22 +16,19 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Luchador = void 0;
+var ataque_1 = require("./ataque");
 var personaje_1 = require("./personaje");
 var Luchador = /** @class */ (function (_super) {
     __extends(Luchador, _super);
-    function Luchador(nombre) {
-        var _this = _super.call(this, nombre) || this;
-        _this.golpeBasico = "¡ Golpe letal !"; //poder exclusivo de luchador
-        return _this;
+    function Luchador(nombre, ataque) {
+        return _super.call(this, nombre, ataque) || this;
     }
-    Luchador.prototype.atacar = function () {
-        return console.log("".concat(this.nombre, " ataca x5"));
-    };
-    Luchador.prototype.defender = function () {
-        return console.log("".concat(this.nombre, " defiende x5"));
-    };
-    Luchador.prototype.lanzarGolpeBasico = function () {
-        return console.log("".concat(this.nombre, " lanza ").concat(this.golpeBasico));
+    Luchador.prototype.evolucionar = function () {
+        this.nivel += 1;
+        this.ataque = new ataque_1.Ataque("Golpe letal", 200);
+        this.defensa += 5; // Aumenta defensa en 5 puntos
+        console.log("".concat(this.nombre, " ha evolucionado. Nueva defensa: ").concat(this.defensa, ". El nivel ahora es: ").concat(this.nivel));
+        console.log(this.ataque.descripcionAtaque());
     };
     return Luchador;
 }(personaje_1.Personaje));

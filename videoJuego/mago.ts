@@ -1,25 +1,17 @@
-
+import { Ataque } from "./ataque";
 import { Personaje } from "./personaje";
 
 export class Mago extends Personaje {
-    protected hechizoBasico : string = "<-<-<-Explosion de energia->->->" //poder exclusivo del mago 
-  
-    constructor (nombre:string){
-        super(nombre); //agrego el super para heredar 
+
+    constructor (nombre:string,ataque:Ataque){
+        super(nombre,ataque);
     }
 
-    //Metodo del poder exclusivo de los magos
-
-    public atacar(): void {
-        return console.log(`${this.nombre} ataca x10`) ;
-    }
-
-    public defender(): void {
-        return console.log(`${this.nombre} defiende x10`) ;
-    }
-
-
-    public lanzarHechizoBasico(): void{
-        return console.log(`${this.nombre} lanza ${this.hechizoBasico} `) ;
+    evolucionar(): void {
+        this.nivel += 1; 
+        this.ataque = new Ataque ("Telekinesis", 500);
+        this.defensa += 5; // Aumenta defensa en 5 puntos
+        console.log(`${this.nombre} ha evolucionado. Nueva defensa: ${this.defensa}. El nivel ahora es: ${this.nivel}`);
+        console.log (this.ataque.descripcionAtaque()); 
     }
 }

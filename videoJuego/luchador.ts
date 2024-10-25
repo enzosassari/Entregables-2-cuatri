@@ -1,22 +1,17 @@
-
+import { Ataque } from "./ataque";
 import { Personaje } from "./personaje";
 
 export class Luchador extends Personaje {
-    protected golpeBasico : string = "¡ Golpe letal !" //poder exclusivo de luchador
 
-    constructor(nombre:string){
-        super(nombre);
+    constructor(nombre:string,ataque:Ataque){
+        super(nombre,ataque);
     }
 
-    public atacar(): void {
-        return console.log(`${this.nombre} ataca x5`) ;
-    }
-
-    public defender(): void {
-        return console.log(`${this.nombre} defiende x5`) ;
-    }
-
-    public lanzarGolpeBasico():void{
-        return console.log(`${this.nombre} lanza ${this.golpeBasico}`);
+    evolucionar(): void {
+        this.nivel += 1; 
+        this.ataque = new Ataque ("Golpe letal", 200);
+        this.defensa += 5; // Aumenta defensa en 5 puntos
+        console.log(`${this.nombre} ha evolucionado. Nueva defensa: ${this.defensa}. El nivel ahora es: ${this.nivel}`);
+        console.log (this.ataque.descripcionAtaque()); 
     }
 }

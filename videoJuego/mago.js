@@ -16,23 +16,19 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Mago = void 0;
+var ataque_1 = require("./ataque");
 var personaje_1 = require("./personaje");
 var Mago = /** @class */ (function (_super) {
     __extends(Mago, _super);
-    function Mago(nombre) {
-        var _this = _super.call(this, nombre) || this;
-        _this.hechizoBasico = "<-<-<-Explosion de energia->->->"; //poder exclusivo del mago 
-        return _this;
+    function Mago(nombre, ataque) {
+        return _super.call(this, nombre, ataque) || this;
     }
-    //Metodo del poder exclusivo de los magos
-    Mago.prototype.atacar = function () {
-        return console.log("".concat(this.nombre, " ataca x10"));
-    };
-    Mago.prototype.defender = function () {
-        return console.log("".concat(this.nombre, " defiende x10"));
-    };
-    Mago.prototype.lanzarHechizoBasico = function () {
-        return console.log("".concat(this.nombre, " lanza ").concat(this.hechizoBasico, " "));
+    Mago.prototype.evolucionar = function () {
+        this.nivel += 1;
+        this.ataque = new ataque_1.Ataque("Telekinesis", 500);
+        this.defensa += 5; // Aumenta defensa en 5 puntos
+        console.log("".concat(this.nombre, " ha evolucionado. Nueva defensa: ").concat(this.defensa, ". El nivel ahora es: ").concat(this.nivel));
+        console.log(this.ataque.descripcionAtaque());
     };
     return Mago;
 }(personaje_1.Personaje));

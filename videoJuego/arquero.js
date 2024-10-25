@@ -17,21 +17,18 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Arquero = void 0;
 var personaje_1 = require("./personaje");
+var ataque_1 = require("./ataque");
 var Arquero = /** @class */ (function (_super) {
     __extends(Arquero, _super);
-    function Arquero(nombre) {
-        var _this = _super.call(this, nombre) || this;
-        _this.flechaBasica = " Golpe con flecha! ";
-        return _this;
+    function Arquero(nombre, ataque) {
+        return _super.call(this, nombre, ataque) || this;
     }
-    Arquero.prototype.atacar = function () {
-        return console.log("".concat(this.nombre, " ataca x15"));
-    };
-    Arquero.prototype.defender = function () {
-        return console.log("".concat(this.nombre, " defiende x15"));
-    };
-    Arquero.prototype.lanzarFlechaBasica = function () {
-        return console.log("".concat(this.nombre, " lanza ").concat(this.flechaBasica));
+    Arquero.prototype.evolucionar = function () {
+        this.nivel += 1;
+        this.ataque = new ataque_1.Ataque("Flecha de fuego", 200);
+        this.defensa += 5; // Aumenta defensa en 5 puntos
+        console.log("".concat(this.nombre, " ha evolucionado. Nueva defensa: ").concat(this.defensa, ". El nivel ahora es: ").concat(this.nivel));
+        console.log(this.ataque.descripcionAtaque());
     };
     return Arquero;
 }(personaje_1.Personaje));

@@ -1,36 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var ataque_1 = require("./ataque");
 var mago_1 = require("./mago");
-var magoEvolucion_1 = require("./magoEvolucion");
 var luchador_1 = require("./luchador");
-var luchadorEvolucion_1 = require("./luchadorEvolucion");
 var arquero_1 = require("./arquero");
-var arqueroEvolucionado_1 = require("./arqueroEvolucionado");
-// Creo magos:
-var Snake = new mago_1.Mago("Snake"); //mago basico
-var Merlin = new magoEvolucion_1.MagoEvolucion("Merlin"); //mago evolucionado 
-//Creo luchadores:
-var Tyson = new luchador_1.Luchador("Tyson"); //luchador basico
-var Maravilla = new luchadorEvolucion_1.LuchadorEvolucion("Maravilla"); //luchador evolucionado
-//Creo arqueros: 
-var Legolas = new arquero_1.Arquero("Legolas"); //arquero basico    
-var Enzo = new arqueroEvolucionado_1.ArqueroEvolucion("Enzo"); //arquero evolucionado 
-//pruebas 
-Snake.atacar();
-Enzo.defender();
-Merlin.atacar();
-Maravilla.defender();
+// Creo mago:
+var Snake = new mago_1.Mago("Snake", new ataque_1.Ataque("Bola de fuego", 100));
+//Creo luchador:
+var Tyson = new luchador_1.Luchador("Tyson", new ataque_1.Ataque("Golpe!", 100));
+//Creo arquero: 
+var Legolas = new arquero_1.Arquero("Legolas", new ataque_1.Ataque("Flechazo", 100));
+// --------------------- pruebas --------------------------------------------//  
 Snake.getVida();
-Merlin.getVida();
 Snake.getNivel();
-Merlin.getNivel();
-Merlin.lanzarHechizoBasico();
-Snake.lanzarHechizoBasico();
-Merlin.lanzarHechizoEvolucionado();
-Tyson.lanzarGolpeBasico();
-Maravilla.lanzarGolpeBasico();
-Legolas.defender();
-Legolas.lanzarFlechaBasica();
-Enzo.getVida();
-Enzo.setVida(50); //le doy 50 de vida 
-Enzo.getVida();
+Tyson.setVida(50); //le doy 50 de vida a Tyson
+Tyson.getVida();
+Legolas.evolucionar();
+Tyson.evolucionar();
