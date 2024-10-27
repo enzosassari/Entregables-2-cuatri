@@ -12,6 +12,6 @@ export class Arquero extends Personaje{
         this.ataque = new Ataque ("Flecha de fuego", 200); 
         this.defensa += 5; // Aumenta defensa en 5 puntos
         console.log(`${this.nombre} ha evolucionado. Nueva defensa: ${this.defensa}. El nivel ahora es: ${this.nivel}`);
-        console.log (this.ataque.descripcionAtaque()); 
+        this.ataque.descripcionAtaque();
     }
 }

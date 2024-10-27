@@ -28,7 +28,7 @@ var Arquero = /** @class */ (function (_super) {
         this.ataque = new ataque_1.Ataque("Flecha de fuego", 200);
         this.defensa += 5; // Aumenta defensa en 5 puntos
         console.log("".concat(this.nombre, " ha evolucionado. Nueva defensa: ").concat(this.defensa, ". El nivel ahora es: ").concat(this.nivel));
-        console.log(this.ataque.descripcionAtaque());
+        this.ataque.descripcionAtaque();
     };
     return Arquero;
 }(personaje_1.Personaje));
