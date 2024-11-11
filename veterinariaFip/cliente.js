@@ -31,7 +31,7 @@ var Cliente = /** @class */ (function () {
         this.mascotas.push(mascotas);
     };
     Cliente.prototype.getMascota = function () {
-        return console.log("Mascota : ", this.mascotas);
+        return this.mascotas;
     };
     Cliente.prototype.bajaMascota = function (nomPaciente) {
         this.mascotas = this.mascotas.filter(function (mascotas) { return mascotas.getPaciente() !== nomPaciente; });

@@ -29,8 +29,15 @@ var Veterinaria = /** @class */ (function () {
     Veterinaria.prototype.agregarCliente = function (clientes) {
         this.clientes.push(clientes);
     };
+    //METODO PARA MOSTRAR CLIENTES Y SUS MASCOTAS 
     Veterinaria.prototype.getCliente = function () {
-        return this.clientes;
+        this.clientes.forEach(function (cliente) {
+            console.log("Cliente: ".concat(cliente.nomCliente));
+            var pacientes = cliente.getMascota();
+            pacientes.forEach(function (paciente) {
+                console.log("  Paciente: ".concat(paciente.nomPaciente, " - Especie: ").concat(paciente.especie));
+            });
+        });
     };
     Veterinaria.prototype.buscarClientePorId = function (id) {
         return this.clientes.find(function (clientes) { return clientes.getIdCliente() === id; });

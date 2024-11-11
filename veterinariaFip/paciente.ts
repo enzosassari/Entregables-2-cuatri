@@ -1,7 +1,7 @@
 export class Paciente {
 
-  protected nomPaciente: string;
-  protected especie: string;
+  public nomPaciente: string;
+  public especie: string;
 
   constructor(nomPaciente: string, especie: string) {
     this.nomPaciente = nomPaciente;

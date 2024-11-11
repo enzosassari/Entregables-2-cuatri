@@ -2,11 +2,11 @@ import { Veterinaria } from "./veterinaria";
 import { Paciente } from "./paciente";
 
 export class Cliente {
-  protected idCliente: number;
-  protected nomCliente: string;
-  protected telefono: number;
-  protected VIP: number;
-  protected mascotas: Paciente[];
+  public idCliente: number;
+  public nomCliente: string;
+  public telefono: number;
+  public VIP: number;
+  public mascotas: Paciente[];
 
   constructor(
     idCliente: number,
@@ -49,8 +49,8 @@ export class Cliente {
     this.mascotas.push(mascotas);
   }
 
-  public getMascota(): void{
-     return console.log("Mascota : ", this.mascotas); 
+  public getMascota(): Paciente[]{
+     return this.mascotas; 
   }
 
   public bajaMascota(nomPaciente:string): void{
