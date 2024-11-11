@@ -8,9 +8,9 @@ let mascota2 = new Paciente ("Gina", "Perro");
 let mascota3 = new Paciente ("Lucas", "Oveja");  
 let mascota4 = new Paciente ("Mica", "Gato"); 
 
-let cliente1 = new Cliente (1,"Enzo",2236361319,1); 
-let cliente2 = new Cliente (2, "Marta", 2284372222, 1); 
-let cliente3 = new Cliente (3, "Mauro", 2236361, 3);
+let cliente1 = new Cliente ("Enzo",2236361319); 
+let cliente2 = new Cliente ("Marta", 2284372222); 
+let cliente3 = new Cliente ("Mauro", 2236361);
 
 let VetePlus = new Veterinaria (1, "Vete plus", "talcahuano 218"); 
 
@@ -28,14 +28,20 @@ cliente1.agregarMascota(mascota4);
 VetePlus.getCliente();  
 console.log("-----------------------------------------------");
 
+//VER ID ALEATORIOS
+cliente1.mostrarID();
+cliente2.mostrarID(); 
+cliente3.mostrarID(); 
+console.log("-----------------------------------------------");
+
 console.log ("Las mascotas de ", cliente1.getNomCliente()," son: ", cliente1.getMascota()); 
 console.log("-----------------------------------------------");
 console.log ("Las mascotas de ", cliente2.getNomCliente()," son: ", cliente2.getMascota()); 
 console.log("-----------------------------------------------");
 
 //ELIMINO CLIENTE 
-VetePlus.bajaCliente(2); 
-console.log ("Los clientes despues de eliminar al cliente 2 son: "); 
+VetePlus.bajaCliente(cliente2.getIdCliente()); 
+console.log ("Los clientes despues de eliminar al cliente", cliente2.getNomCliente(), " son: "); 
 VetePlus.getCliente(); 
 console.log("-----------------------------------------------");
 
@@ -49,11 +55,26 @@ console.log("-----------------------------------------------");
 
 
 //BUSCO CLIENTE POR ID
-console.log("El cliente n°1 es : ", VetePlus.buscarClientePorId(1)); 
+console.log("El cliente con el id: ", cliente3.getIdCliente(), " es: ", VetePlus.buscarClientePorId(cliente3.getIdCliente())); 
 console.log("-----------------------------------------------");
 VetePlus.getCliente(); 
 console.log("-----------------------------------------------");
 
 //ELIMINO UNA MASCOTA 
+console.log ("Elimino a mascota Mica");
 cliente1.bajaMascota("Mica"); 
 VetePlus.getCliente(); 
+console.log("-----------------------------------------------");
+
+//CONSULTAS EN LA VETERINARIA
+cliente1.consultaVeterinaria(); 
+cliente1.consultaVeterinaria(); 
+cliente1.consultaVeterinaria(); 
+cliente1.consultaVeterinaria(); 
+cliente1.consultaVeterinaria(); 
+cliente1.consultaVeterinaria(); 
+cliente3.consultaVeterinaria(); 
+console.log("-----------------------------------------------");
+
+
+

@@ -2,18 +2,23 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Cliente = void 0;
 var Cliente = /** @class */ (function () {
-    function Cliente(idCliente, nomCliente, telefono, VIP) {
-        this.idCliente = idCliente;
+    function Cliente(nomCliente, telefono) {
+        this.VIP = false;
+        this.acuVisitas = 0;
+        this.idCliente = this.generarId();
         this.nomCliente = nomCliente;
         this.telefono = telefono;
-        this.VIP = VIP;
+        //this.VIP = VIP;
         this.mascotas = [];
     }
+    Cliente.prototype.generarId = function () {
+        return Math.floor(Math.random() * 300);
+    };
     Cliente.prototype.getIdCliente = function () {
         return this.idCliente;
     };
-    Cliente.prototype.setIdCliente = function (nuevoIdCliente) {
-        this.nomCliente = nuevoIdCliente;
+    Cliente.prototype.mostrarID = function () {
+        console.log("El ID del cliente ", this.getNomCliente(), " es: ", this.getIdCliente());
     };
     Cliente.prototype.getNomCliente = function () {
         return this.nomCliente;
@@ -27,12 +32,22 @@ var Cliente = /** @class */ (function () {
     Cliente.prototype.setTelefono = function (nuevoTelefono) {
         this.telefono = nuevoTelefono;
     };
+    //METODO PARA CONSULTAS VETERINARIAS Y ACUMULAR VISITAS PARA SER VIP
+    Cliente.prototype.consultaVeterinaria = function () {
+        this.acuVisitas += 1;
+        console.log("El cliente ", this.nomCliente, "tiene : ", this.acuVisitas, " consultas en la veterinaria");
+        if (this.acuVisitas >= 5) {
+            this.VIP = true;
+            console.log("El cliente es *VIP*");
+        }
+    };
     Cliente.prototype.agregarMascota = function (mascotas) {
         this.mascotas.push(mascotas);
     };
     Cliente.prototype.getMascota = function () {
         return this.mascotas;
     };
+    //METODO PARA ELIMINAR MASCOTA
     Cliente.prototype.bajaMascota = function (nomPaciente) {
         this.mascotas = this.mascotas.filter(function (mascotas) { return mascotas.getPaciente() !== nomPaciente; });
     };

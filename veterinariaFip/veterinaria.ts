@@ -1,6 +1,5 @@
 import { CLIENT_RENEG_LIMIT } from "tls";
 import { Cliente } from "./cliente";
-import { Paciente } from "./paciente";
 
 export class Veterinaria {
   public id: number;
@@ -54,10 +53,12 @@ export class Veterinaria {
     });
   }
 
+  //METODO PARA BUSCAR CLIENTE POR ID
   public buscarClientePorId(id: number) {
     return this.clientes.find((clientes) => clientes.getIdCliente() === id);
   }
 
+  //METODO PARA ELIMINAR CLIENTE
   public bajaCliente(id: number): void {
     this.clientes = this.clientes.filter((clientes) => clientes.getIdCliente() !== id);
   }

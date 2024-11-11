@@ -5,28 +5,32 @@ export class Cliente {
   public idCliente: number;
   public nomCliente: string;
   public telefono: number;
-  public VIP: number;
+  public VIP: boolean = false; 
   public mascotas: Paciente[];
+  public acuVisitas: number = 0;
 
   constructor(
-    idCliente: number,
     nomCliente: string,
     telefono: number,
-    VIP: number,
+    //VIP: boolean
   ) {
-    this.idCliente = idCliente;
+    this.idCliente = this.generarId();
     this.nomCliente = nomCliente;
     this.telefono = telefono;
-    this.VIP = VIP;
+    //this.VIP = VIP;
     this.mascotas = [];
   }
 
-  public getIdCliente(): number {
+  public generarId(): number {
+    return Math.floor(Math.random() * 300);
+  }
+
+  public getIdCliente(): number{
     return this.idCliente;
   }
 
-  public setIdCliente(nuevoIdCliente: string) {
-    this.nomCliente = nuevoIdCliente;
+  public mostrarID():void{
+    console.log("El ID del cliente ",this.getNomCliente(), " es: ", this.getIdCliente());
   }
 
   public getNomCliente(): string {
@@ -45,6 +49,16 @@ export class Cliente {
     this.telefono = nuevoTelefono;
   }
 
+  //METODO PARA CONSULTAS VETERINARIAS Y ACUMULAR VISITAS PARA SER VIP
+  public consultaVeterinaria():void{
+    this.acuVisitas += 1 ; 
+    console.log ("El cliente ", this.nomCliente, "tiene : ",this.acuVisitas," consultas en la veterinaria");
+    if (this.acuVisitas>=5){
+      this.VIP = true; 
+      console.log ("El cliente es *VIP*");
+    }
+  }
+  
   public agregarMascota(mascotas: Paciente): void {
     this.mascotas.push(mascotas);
   }
@@ -53,6 +67,7 @@ export class Cliente {
      return this.mascotas; 
   }
 
+  //METODO PARA ELIMINAR MASCOTA
   public bajaMascota(nomPaciente:string): void{
    this.mascotas = this.mascotas.filter(mascotas => mascotas.getPaciente() !== nomPaciente); 
   }

@@ -39,9 +39,11 @@ var Veterinaria = /** @class */ (function () {
             });
         });
     };
+    //METODO PARA BUSCAR CLIENTE POR ID
     Veterinaria.prototype.buscarClientePorId = function (id) {
         return this.clientes.find(function (clientes) { return clientes.getIdCliente() === id; });
     };
+    //METODO PARA ELIMINAR CLIENTE
     Veterinaria.prototype.bajaCliente = function (id) {
         this.clientes = this.clientes.filter(function (clientes) { return clientes.getIdCliente() !== id; });
     };
