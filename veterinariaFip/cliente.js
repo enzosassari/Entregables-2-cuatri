@@ -4,12 +4,12 @@ exports.Cliente = void 0;
 var Cliente = /** @class */ (function () {
     function Cliente(nomCliente, telefono) {
         this.VIP = false;
+        //public mascotas: Paciente[];
         this.acuVisitas = 0;
         this.idCliente = this.generarId();
         this.nomCliente = nomCliente;
         this.telefono = telefono;
-        //this.VIP = VIP;
-        this.mascotas = [];
+        //this.mascotas = [];
     }
     Cliente.prototype.generarId = function () {
         return Math.floor(Math.random() * 300);
@@ -40,16 +40,6 @@ var Cliente = /** @class */ (function () {
             this.VIP = true;
             console.log("El cliente es *VIP*");
         }
-    };
-    Cliente.prototype.agregarMascota = function (mascotas) {
-        this.mascotas.push(mascotas);
-    };
-    Cliente.prototype.getMascota = function () {
-        return this.mascotas;
-    };
-    //METODO PARA ELIMINAR MASCOTA
-    Cliente.prototype.bajaMascota = function (nomPaciente) {
-        this.mascotas = this.mascotas.filter(function (mascotas) { return mascotas.getPaciente() !== nomPaciente; });
     };
     return Cliente;
 }());

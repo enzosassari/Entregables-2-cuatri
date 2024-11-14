@@ -6,19 +6,17 @@ export class Cliente {
   public nomCliente: string;
   public telefono: number;
   public VIP: boolean = false; 
-  public mascotas: Paciente[];
+  //public mascotas: Paciente[];
   public acuVisitas: number = 0;
 
   constructor(
     nomCliente: string,
     telefono: number,
-    //VIP: boolean
   ) {
     this.idCliente = this.generarId();
     this.nomCliente = nomCliente;
     this.telefono = telefono;
-    //this.VIP = VIP;
-    this.mascotas = [];
+    //this.mascotas = [];
   }
 
   public generarId(): number {
@@ -59,18 +57,18 @@ export class Cliente {
     }
   }
   
-  public agregarMascota(mascotas: Paciente): void {
-    this.mascotas.push(mascotas);
-  }
+  //public agregarMascota(mascotas: Paciente): void {
+   // this.mascotas.push(mascotas);
+  //}
 
-  public getMascota(): Paciente[]{
-     return this.mascotas; 
-  }
+  //public getMascota(): Paciente[]{
+  //   return this.mascotas; 
+  //}
 
   //METODO PARA ELIMINAR MASCOTA
-  public bajaMascota(nomPaciente:string): void{
-   this.mascotas = this.mascotas.filter(mascotas => mascotas.getPaciente() !== nomPaciente); 
-  }
+  //public bajaMascota(nomPaciente:string): void{
+   //this.mascotas = this.mascotas.filter(mascotas => mascotas.getPaciente() !== nomPaciente); 
+  //}
 
   //public modificarCliente (id:number, nuevoCliente: Cliente){
     //busca el indice con el id
