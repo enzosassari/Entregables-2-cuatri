@@ -2,6 +2,7 @@ import { Veterinaria } from "./veterinaria";
 import { Cliente } from "./cliente";
 import { Paciente } from "./paciente";
 import { Red } from "./red";
+import { Proveedor } from "./proveedor";
 
 //CREO LAS VETERINARIAS
 let VetePlus = new Veterinaria  ("Vete plus", "talcahuano 218"); 
@@ -23,11 +24,11 @@ VetePlus.agregarCliente(cliente1);
 VetePlus.agregarCliente(cliente2); 
 VetePlus.agregarCliente(cliente3); 
 
-//CREO LOS PACIENTES (MASCOTAS) Y LE ASIGNO UN CLIENTE POR EL ID
-let mascota1 = new Paciente ("Legolas","Lagarto",cliente1.getIdCliente()); 
-let mascota2 = new Paciente ("Gina", "Perro",cliente2.getIdCliente()); 
-let mascota3 = new Paciente ("Lucas", "Oveja",cliente3.getIdCliente());  
-let mascota4 = new Paciente ("Mica", "Gato",cliente1.getIdCliente()); 
+//CREO LOS PACIENTES (MASCOTAS)
+let mascota1 = new Paciente ("Legolas","Lagarto",24); 
+let mascota2 = new Paciente ("Gina", "perro",10); 
+let mascota3 = new Paciente ("Lucas", "Oveja",12);  
+let mascota4 = new Paciente ("Mica", "gato",4); 
 
 console.log ("Muestro las veterinarias: ")
 red.mostrarVeterinarias(); //muestro veterinarias
@@ -44,10 +45,10 @@ red.mostrarVeterinarias(); //muestro veterinarias
 console.log("-----------------------------------------------");
 
 
-///cliente1.agregarMascota(mascota1);
-//cliente2.agregarMascota(mascota2); 
-//cliente3.agregarMascota(mascota3); 
-//cliente1.agregarMascota(mascota4); 
+cliente1.agregarMascota(mascota1);
+cliente2.agregarMascota(mascota2); 
+cliente3.agregarMascota(mascota3); 
+cliente1.agregarMascota(mascota4); 
 
 
 //MUESTRO LOS CLIENTES DE LA VETERINARIA 
@@ -64,9 +65,7 @@ console.log("-----------------------------------------------");
 
 //PRUEBA DE MOSTRAR CLIENTE Y PACIENTE 
 console.log ("Muestro cliente y su paciente: ")
-console.log ("Las mascotas de ", cliente1.getIdCliente()," son: ", ); 
-console.log("-----------------------------------------------");
-console.log ("Las mascotas de ", VetePlus.buscarClientePorId(cliente2.getIdCliente())," son: ", VetePlus.buscarPacientePorId((cliente2.getIdCliente()))); 
+console.log ("Las mascotas de ", cliente1.getNomCliente()," son: ", cliente1.getMascota() ); 
 console.log("-----------------------------------------------");
 
 //ELIMINO CLIENTE 
@@ -90,7 +89,7 @@ console.log("-----------------------------------------------");
 
 //ELIMINO UNA MASCOTA 
 console.log ("Elimino a mascota Mica");
-VetePlus.bajaPaciente("Mica"); 
+cliente1.bajaMascota("Mica"); 
 VetePlus.getCliente(); 
 console.log("-----------------------------------------------");
 
@@ -108,6 +107,24 @@ console.log("-----------------------------------------------");
 console.log(VetePlus.getId()); 
 console.log("-----------------------------------------------");
 
-console.log (mascota1.getIdPaciente()); 
+//SON EXOTICAS ? 
+console.log ("Muestra que especies son exoticas: ")
+mascota1.esExotica(); 
+mascota2.esExotica();
+mascota3.esExotica();
+mascota4.esExotica(); 
+console.log("-----------------------------------------------");
+
+//AGREGO PROVEEDORES
+
+let proveedor1 = new Proveedor ("Hierros gonzalez", 2287454);
+let proveedor2 = new Proveedor ("maxiconsumo", 54545454); 
+let proveedor3 = new Proveedor ("OLANET", 22);
+
+red.altaProveedor(proveedor1); 
+red.altaProveedor(proveedor2); 
+red.altaProveedor(proveedor3); 
+
+red.mostrarProveedores(); 
 
 

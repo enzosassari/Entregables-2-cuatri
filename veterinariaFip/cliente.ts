@@ -6,7 +6,7 @@ export class Cliente {
   public nomCliente: string;
   public telefono: number;
   public VIP: boolean = false; 
-  //public mascotas: Paciente[];
+  public mascotas: Paciente[];
   public acuVisitas: number = 0;
 
   constructor(
@@ -16,9 +16,10 @@ export class Cliente {
     this.idCliente = this.generarId();
     this.nomCliente = nomCliente;
     this.telefono = telefono;
-    //this.mascotas = [];
+    this.mascotas = [];
   }
-
+  
+  //METODO PARA GENERAR ID ALEATORIA
   public generarId(): number {
     return Math.floor(Math.random() * 300);
   }
@@ -27,6 +28,7 @@ export class Cliente {
     return this.idCliente;
   }
 
+  //METODO PARA MOSTRAR NOMBRE Y ID DEL CLIENTE
   public mostrarID():void{
     console.log("El ID del cliente ",this.getNomCliente(), " es: ", this.getIdCliente());
   }
@@ -57,23 +59,20 @@ export class Cliente {
     }
   }
   
-  //public agregarMascota(mascotas: Paciente): void {
-   // this.mascotas.push(mascotas);
-  //}
+  //METODO PARA AGREGAR MASCOTA
+  public agregarMascota(mascotas: Paciente): void {
+    this.mascotas.push(mascotas);
+  }
 
-  //public getMascota(): Paciente[]{
-  //   return this.mascotas; 
-  //}
+  public getMascota(): Paciente[]{
+     return this.mascotas; 
+  }
 
   //METODO PARA ELIMINAR MASCOTA
-  //public bajaMascota(nomPaciente:string): void{
-   //this.mascotas = this.mascotas.filter(mascotas => mascotas.getPaciente() !== nomPaciente); 
-  //}
+  public bajaMascota(nomPaciente:string): void{
+   this.mascotas = this.mascotas.filter(mascotas => mascotas.getPaciente() !== nomPaciente); 
+  }
 
-  //public modificarCliente (id:number, nuevoCliente: Cliente){
-    //busca el indice con el id
-   // const index = this.clientes.findIndex(clientes => clientes.getIdCliente()===id);
-  //  this.clientes[index] = nuevoCliente; 
-  //}
-  
+
 }
+

@@ -7,7 +7,6 @@ var Veterinaria = /** @class */ (function () {
         this.nombre = nombre;
         this.direccion = direccion;
         this.clientes = [];
-        this.pacientes = [];
     }
     //METODO PARA GENERAR ID ALEATORIA
     Veterinaria.prototype.generarId = function () {
@@ -31,34 +30,16 @@ var Veterinaria = /** @class */ (function () {
     Veterinaria.prototype.agregarCliente = function (clientes) {
         this.clientes.push(clientes);
     };
-    //METODO PARA MOSTRAR CLIENTES Y SUS MASCOTAS 
+    //METODO PARA MOSTRAR CLIENTES Y SUS MASCOTAS
     Veterinaria.prototype.getCliente = function () {
-        var _this = this;
         this.clientes.forEach(function (cliente) {
-            console.log("Cliente: ".concat(cliente.nomCliente, " (ID: ").concat(cliente.idCliente, ")"));
-            var pacientesDelCliente = _this.pacientes.filter(function (mascota) { return mascota.idDueno === cliente.idCliente; });
-            if (pacientesDelCliente.length > 0) {
-                pacientesDelCliente.forEach(function (mascota) {
-                    console.log(" Mascota: ".concat(mascota.nomPaciente, " (Especie: ").concat(mascota.especie, ")"));
-                });
-            }
-            else {
-                console.log("  No tiene mascotas registradas.");
-            }
+            console.log("Cliente: ".concat(cliente.nomCliente));
+            var pacientes = cliente.getMascota();
+            pacientes.forEach(function (paciente) {
+                console.log("  Paciente: ".concat(paciente.nomPaciente, " - Especie: ").concat(paciente.especie));
+            });
         });
     };
-    //METODO PARA MOSTRAR CLIENTES Y SUS MASCOTAS
-    //public getCliente(): void {
-    //this.clientes.forEach((cliente) => {
-    //  console.log(`Cliente: ${cliente.nomCliente}`);
-    // const pacientes = cliente.getMascota();
-    //  pacientes.forEach((paciente) => {
-    //   console.log(
-    //     `  Paciente: ${paciente.nomPaciente} - Especie: ${paciente.especie}`
-    //   );
-    // });
-    // });
-    // }
     //METODO PARA BUSCAR CLIENTE POR ID
     Veterinaria.prototype.buscarClientePorId = function (id) {
         return this.clientes.find(function (clientes) { return clientes.getIdCliente() === id; });
@@ -80,20 +61,6 @@ var Veterinaria = /** @class */ (function () {
         else {
             console.log("Cliente con id '".concat(id, "' no encontrado"));
         }
-    };
-    Veterinaria.prototype.buscarPacientePorId = function (id) {
-        return this.pacientes.find(function (pacientes) { return pacientes.getIdPaciente() === id; });
-    };
-    //METODO PARA AGREGAR MASCOTAS
-    Veterinaria.prototype.agregarPaciente = function (mascotas) {
-        this.pacientes.push(mascotas);
-    };
-    Veterinaria.prototype.getPaciente = function () {
-        return this.pacientes;
-    };
-    //METODO PARA ELIMINAR MASCOTA
-    Veterinaria.prototype.bajaPaciente = function (nomPaciente) {
-        this.pacientes = this.pacientes.filter(function (mascotas) { return mascotas.getPaciente() !== nomPaciente; });
     };
     return Veterinaria;
 }());

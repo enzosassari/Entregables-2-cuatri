@@ -4,6 +4,7 @@ var veterinaria_1 = require("./veterinaria");
 var cliente_1 = require("./cliente");
 var paciente_1 = require("./paciente");
 var red_1 = require("./red");
+var proveedor_1 = require("./proveedor");
 //CREO LAS VETERINARIAS
 var VetePlus = new veterinaria_1.Veterinaria("Vete plus", "talcahuano 218");
 var VetePlus2 = new veterinaria_1.Veterinaria("Vete plus 2", "Av. Pringles 3502");
@@ -19,11 +20,11 @@ var cliente3 = new cliente_1.Cliente("Mauro", 2236361);
 VetePlus.agregarCliente(cliente1);
 VetePlus.agregarCliente(cliente2);
 VetePlus.agregarCliente(cliente3);
-//CREO LOS PACIENTES (MASCOTAS) Y LE ASIGNO UN CLIENTE POR EL ID
-var mascota1 = new paciente_1.Paciente("Legolas", "Lagarto", cliente1.getIdCliente());
-var mascota2 = new paciente_1.Paciente("Gina", "Perro", cliente2.getIdCliente());
-var mascota3 = new paciente_1.Paciente("Lucas", "Oveja", cliente3.getIdCliente());
-var mascota4 = new paciente_1.Paciente("Mica", "Gato", cliente1.getIdCliente());
+//CREO LOS PACIENTES (MASCOTAS)
+var mascota1 = new paciente_1.Paciente("Legolas", "Lagarto", 24);
+var mascota2 = new paciente_1.Paciente("Gina", "perro", 10);
+var mascota3 = new paciente_1.Paciente("Lucas", "Oveja", 12);
+var mascota4 = new paciente_1.Paciente("Mica", "gato", 4);
 console.log("Muestro las veterinarias: ");
 red.mostrarVeterinarias(); //muestro veterinarias
 console.log("-----------------------------------------------");
@@ -35,10 +36,10 @@ console.log("Modifico veterinaria VetePlus");
 red.modificarVeterinaria(VetePlus.getId(), "Nueva Veterinaria", "Calle falsa 123"); //MODIFICO VETERINARIA 
 red.mostrarVeterinarias(); //muestro veterinarias
 console.log("-----------------------------------------------");
-///cliente1.agregarMascota(mascota1);
-//cliente2.agregarMascota(mascota2); 
-//cliente3.agregarMascota(mascota3); 
-//cliente1.agregarMascota(mascota4); 
+cliente1.agregarMascota(mascota1);
+cliente2.agregarMascota(mascota2);
+cliente3.agregarMascota(mascota3);
+cliente1.agregarMascota(mascota4);
 //MUESTRO LOS CLIENTES DE LA VETERINARIA 
 console.log("Los clientes de la veterinaria son : ");
 VetePlus.getCliente();
@@ -51,9 +52,7 @@ cliente3.mostrarID();
 console.log("-----------------------------------------------");
 //PRUEBA DE MOSTRAR CLIENTE Y PACIENTE 
 console.log("Muestro cliente y su paciente: ");
-console.log("Las mascotas de ", VetePlus.buscarClientePorId(cliente1.getIdCliente()), " son: ", VetePlus.buscarPacientePorId(cliente1.getIdCliente()));
-console.log("-----------------------------------------------");
-console.log("Las mascotas de ", VetePlus.buscarClientePorId(cliente2.getIdCliente()), " son: ", VetePlus.buscarPacientePorId((cliente2.getIdCliente())));
+console.log("Las mascotas de ", cliente1.getNomCliente(), " son: ", cliente1.getMascota());
 console.log("-----------------------------------------------");
 //ELIMINO CLIENTE 
 VetePlus.bajaCliente(cliente2.getIdCliente());
@@ -72,7 +71,7 @@ VetePlus.getCliente();
 console.log("-----------------------------------------------");
 //ELIMINO UNA MASCOTA 
 console.log("Elimino a mascota Mica");
-VetePlus.bajaPaciente("Mica");
+cliente1.bajaMascota("Mica");
 VetePlus.getCliente();
 console.log("-----------------------------------------------");
 //CONSULTAS EN LA VETERINARIA
@@ -87,4 +86,18 @@ console.log("-----------------------------------------------");
 //CONSULTAR ID DE VETERINARIA
 console.log(VetePlus.getId());
 console.log("-----------------------------------------------");
-console.log(mascota1.getIdPaciente());
+//SON EXOTICAS ? 
+console.log("Muestra que especies son exoticas: ");
+mascota1.esExotica();
+mascota2.esExotica();
+mascota3.esExotica();
+mascota4.esExotica();
+console.log("-----------------------------------------------");
+//AGREGO PROVEEDORES
+var proveedor1 = new proveedor_1.Proveedor("Hierros gonzalez", 2287454);
+var proveedor2 = new proveedor_1.Proveedor("maxiconsumo", 54545454);
+var proveedor3 = new proveedor_1.Proveedor("OLANET", 22);
+red.altaProveedor(proveedor1);
+red.altaProveedor(proveedor2);
+red.altaProveedor(proveedor3);
+red.mostrarProveedores();

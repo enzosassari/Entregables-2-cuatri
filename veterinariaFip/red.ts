@@ -1,11 +1,14 @@
+import { Proveedor } from "./proveedor";
 import { Veterinaria } from "./veterinaria"
 
 export class Red {
 
     public veterinarias : Veterinaria[];  
+    public proveedores : Proveedor[]; 
 
     constructor(){
         this.veterinarias = []; 
+        this.proveedores = []; 
     }
 
     public altaVeterinaria (veterinaria: Veterinaria): void{
@@ -20,7 +23,6 @@ export class Red {
         console.log ("Las veterinarias son : ", this.veterinarias); 
     }
 
-
     public modificarVeterinaria(id: number, nuevoNombre?: string, nuevaDireccion?: string): void {
         const veterinaria = this.veterinarias.find(vet => vet.getId() === id);
         if (veterinaria) {
@@ -31,7 +33,15 @@ export class Red {
           console.log(`Veterinaria con id '${id}' no encontrada.`);
         }
       }
-}
+
+      public altaProveedor (proveedor: Proveedor): void{
+        this.proveedores.push (proveedor);  
+      }
+
+      public mostrarProveedores(): void {
+        console.log ("Los proveedores son  : ", this.proveedores); 
+     }
+}   
 
 
 

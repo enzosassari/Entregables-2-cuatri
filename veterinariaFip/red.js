@@ -4,6 +4,7 @@ exports.Red = void 0;
 var Red = /** @class */ (function () {
     function Red() {
         this.veterinarias = [];
+        this.proveedores = [];
     }
     Red.prototype.altaVeterinaria = function (veterinaria) {
         this.veterinarias.push(veterinaria);
@@ -26,6 +27,12 @@ var Red = /** @class */ (function () {
         else {
             console.log("Veterinaria con id '".concat(id, "' no encontrada."));
         }
+    };
+    Red.prototype.altaProveedor = function (proveedor) {
+        this.proveedores.push(proveedor);
+    };
+    Red.prototype.mostrarProveedores = function () {
+        console.log("Los proveedores son  : ", this.proveedores);
     };
     return Red;
 }());
