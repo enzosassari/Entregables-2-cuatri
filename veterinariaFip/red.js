@@ -34,6 +34,9 @@ var Red = /** @class */ (function () {
     Red.prototype.mostrarProveedores = function () {
         console.log("Los proveedores son  : ", this.proveedores);
     };
+    Red.prototype.bajaProveedores = function (nombre) {
+        this.proveedores = this.proveedores.filter(function (proveedores) { return proveedores.getNomProveedor() !== nombre; });
+    };
     return Red;
 }());
 exports.Red = Red;

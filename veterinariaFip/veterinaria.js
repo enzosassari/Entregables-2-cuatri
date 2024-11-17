@@ -48,7 +48,7 @@ var Veterinaria = /** @class */ (function () {
     Veterinaria.prototype.bajaCliente = function (id) {
         this.clientes = this.clientes.filter(function (clientes) { return clientes.getIdCliente() !== id; });
     };
-    //METODO PARA MODIFICAR CLIENTE 
+    //METODO PARA MODIFICAR CLIENTE
     Veterinaria.prototype.modificarCliente = function (id, nuevoNombre, nuevoTelefono) {
         var cliente = this.clientes.find(function (cliente) { return cliente.getIdCliente() === id; });
         if (cliente) {

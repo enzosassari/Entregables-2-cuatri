@@ -11,14 +11,20 @@ var Proveedor = /** @class */ (function () {
     Proveedor.prototype.generarId = function () {
         return Math.floor(Math.random() * 300);
     };
+    Proveedor.prototype.getId = function () {
+        return this.idProveedor;
+    };
     Proveedor.prototype.getNomProveedor = function () {
         return this.nomProveedor;
+    };
+    Proveedor.prototype.setNomProveedor = function (nomProveedor) {
+        this.nomProveedor = nomProveedor;
     };
     Proveedor.prototype.getTelefono = function () {
         return this.telefono;
     };
-    Proveedor.prototype.getId = function () {
-        return this.idProveedor;
+    Proveedor.prototype.setTelefono = function (telefono) {
+        this.telefono = telefono;
     };
     return Proveedor;
 }());

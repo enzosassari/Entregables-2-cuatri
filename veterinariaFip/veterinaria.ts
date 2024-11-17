@@ -1,6 +1,4 @@
-import { CLIENT_RENEG_LIMIT } from "tls";
 import { Cliente } from "./cliente";
-import { Paciente } from "./paciente";
 
 export class Veterinaria {
   public id: number;
@@ -44,13 +42,12 @@ export class Veterinaria {
     this.clientes.push(clientes);
   }
 
-
   //METODO PARA MOSTRAR CLIENTES Y SUS MASCOTAS
   public getCliente(): void {
     this.clientes.forEach((cliente) => {
       console.log(`Cliente: ${cliente.nomCliente}`);
-     const pacientes = cliente.getMascota();
-     pacientes.forEach((paciente) => {
+      const pacientes = cliente.getMascota();
+      pacientes.forEach((paciente) => {
         console.log(
           `  Paciente: ${paciente.nomPaciente} - Especie: ${paciente.especie}`
         );
@@ -65,20 +62,26 @@ export class Veterinaria {
 
   //METODO PARA ELIMINAR CLIENTE
   public bajaCliente(id: number): void {
-    this.clientes = this.clientes.filter((clientes) => clientes.getIdCliente() !== id);
+    this.clientes = this.clientes.filter(
+      (clientes) => clientes.getIdCliente() !== id
+    );
   }
 
-  //METODO PARA MODIFICAR CLIENTE 
-  public modificarCliente(id: number, nuevoNombre?: string, nuevoTelefono?: number): void {
-    const cliente = this.clientes.find (cliente => cliente.getIdCliente()===id);
-    if (cliente){
+  //METODO PARA MODIFICAR CLIENTE
+  public modificarCliente(
+    id: number,
+    nuevoNombre?: string,
+    nuevoTelefono?: number
+  ): void {
+    const cliente = this.clientes.find(
+      (cliente) => cliente.getIdCliente() === id
+    );
+    if (cliente) {
       if (nuevoNombre) cliente.nomCliente = nuevoNombre;
-      if (nuevoTelefono) cliente.telefono = nuevoTelefono; 
-      console.log (`Cliente con id '${id}' modificado`);
-      }else{
-        console.log (`Cliente con id '${id}' no encontrado`); 
-      }
+      if (nuevoTelefono) cliente.telefono = nuevoTelefono;
+      console.log(`Cliente con id '${id}' modificado`);
+    } else {
+      console.log(`Cliente con id '${id}' no encontrado`);
     }
+  }
 }
-
-

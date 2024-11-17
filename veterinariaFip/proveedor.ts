@@ -15,17 +15,25 @@ export class Proveedor {
         return Math.floor(Math.random() * 300);
     }
 
+    public getId(): number{
+        return this.idProveedor; 
+    }
+
     public getNomProveedor(): string {
         return this.nomProveedor; 
+    }
+
+    public setNomProveedor(nomProveedor:string){
+        this.nomProveedor = nomProveedor; 
     }
 
     public getTelefono(): number{
         return this.telefono; 
     }
 
-    public getId(): number{
-        return this.idProveedor; 
+    public setTelefono(telefono:number){
+        this.telefono = telefono;
     }
 
-
 }
+

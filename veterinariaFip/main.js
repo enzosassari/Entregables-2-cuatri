@@ -101,3 +101,7 @@ red.altaProveedor(proveedor1);
 red.altaProveedor(proveedor2);
 red.altaProveedor(proveedor3);
 red.mostrarProveedores();
+red.bajaProveedores("maxiconsumo");
+console.log("-----------------------------------------------");
+console.log("Elimino maxiconsumo y muestro");
+red.mostrarProveedores();

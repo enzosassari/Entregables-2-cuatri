@@ -41,6 +41,10 @@ export class Red {
       public mostrarProveedores(): void {
         console.log ("Los proveedores son  : ", this.proveedores); 
      }
+
+     public bajaProveedores(nombre:string):void{
+      this.proveedores = this.proveedores.filter(proveedores => proveedores.getNomProveedor() !== nombre); 
+     }
 }   
 
 
